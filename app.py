@@ -24,7 +24,7 @@ st.title("Premium Movie World")
 
 # --- ၂။ Link များ သတ်မှတ်ခြင်း ---
 smart_link = "https://www.effectivegatecpm.com/qibbz5efk?key=5f2f2e515dea23a4c38d317bca6b11c7"
-video_link = "link https://sl1nk.com/wVO8S"
+video_link = "https://sl1nk.com/wVO8S"
 
 st.warning("⚠️ ဗီဒီယိုကြည့်ရန် 'WATCH MOVIE' ကိုနှိပ်ပါ။ ကြော်ငြာ Tab ပွင့်လာပြီး ၅ စက္ကန့်အကြာတွင် Video Link ပေါ်လာပါမည်။")
 
@@ -85,3 +85,4 @@ components.html(countdown_js, height=250)
 
 st.write("---")
 st.caption("How to watch: Click Watch Movie -> Wait 5s -> Click the Green Button.")
+
