@@ -33,9 +33,9 @@ banner_layout = """
     </div>
     <div style="flex: 1; min-width: 300px; max-width: 320px;">
         <script type="text/javascript">
-            atOptions = {'key' : '6edd15a0ba83c13d90e58d064b3f416f', 'format' : 'iframe', 'height' : 250, 'width' : 600, 'params' : {}};
+            atOptions = {'key' : '2f19140b5278570ad28374e5e4a7260d', 'format' : 'iframe', 'height' : 250, 'width' : 600, 'params' : {}};
         </script>
-        <script type="text/javascript" src="//www.highperformanceformat.com/6edd15a0ba83c13d90e58d064b3f416f/invoke.js"></script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/2f19140b5278570ad28374e5e4a7260d/invoke.js"></script>
     </div>
     <div style="flex: 1; min-width: 300px; max-width: 320px;">
         <script type="text/javascript">
@@ -102,6 +102,7 @@ function startProcess() {{
 """
 components.html(countdown_js, height=260)
 components.html(banner_layout, height=270)
+
 
 
 
