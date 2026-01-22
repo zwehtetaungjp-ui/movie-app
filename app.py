@@ -84,5 +84,6 @@ function startProcess() {{
 components.html(countdown_js, height=250)
 
 # --- ၄။ အောက်ခြေနေရာလွတ်တွင် Banner တစ်ခု ထပ်ထည့်ခြင်း ---
-components.html(ad_banner_code, height=260)
+components.html(social_bar_code, height=260)
+
 
