@@ -1,10 +1,10 @@
 import streamlit as st
 import streamlit.components.v1 as components
 
-st.set_page_config(page_title="Movie Portal", layout="centered")
+st.set_page_config(page_title="Premium Movie World", layout="centered")
 
-# --- ၁။ Banner Ads ထည့်သွင်းခြင်း ---
-# Adsterra ကရတဲ့ Banner Script Code ကို ဒီနေရာမှာ ထည့်ပါ
+# --- ၁။ Banner Ads ---
+# Adsterra မှ ရလာသော Banner Code ကို ဤနေရာတွင် ထည့်ပါ
 ad_banner_code = """
 <div style="text-align:center;">
     <script type="text/javascript">
@@ -12,49 +12,54 @@ ad_banner_code = """
             'key' : '6edd15a0ba83c13d90e58d064b3f416f',
             'format' : 'iframe',
             'height' : 90,
-            'width' : 720,
+            'width' : 728,
             'params' : {}
         };
     </script>
     <script type="text/javascript" src="//www.highperformanceformat.com/6edd15a0ba83c13d90e58d064b3f416f/invoke.js"></script>
-    </div>
+</div>
 """
 components.html(ad_banner_code, height=100)
 
 st.title("🔞 Premium Movie World")
-st.image("https://via.placeholder.com/600x300?text=Premium+Movie+Thumbnail")
 
-# --- ၂။ Link နှိပ်လျှင် Ads တက်ပြီး Video ဆီ တိုက်ရိုက်သွားမည့် ခလုတ် ---
-# သင့်ရဲ့ Link များဖြင့် အစားထိုးပါ
-ad_link = "https://www.effectivegatecpm.com/qibbz5efk?key=5f2f2e515dea23a4c38d317bca6b11c7"
-video_link = "https://l1nq.com/wVO8S"
+# --- ၂။ Link များ သတ်မှတ်ခြင်း ---
+# သင့်ရဲ့ Adsterra Smart Link နှင့် Video Link များကို အောက်တွင် အစားထိုးပါ
+smart_link = "https://www.effectivegatecpm.com/qibbz5efk?key=5f2f2e515dea23a4c38d317bca6b11c7"
+video_link = "https://sl1nk.com/wVO8S"
 
-# JavaScript သုံးပြီး Tab နှစ်ခု တစ်ပြိုင်တည်း ဖွင့်နည်း
-# Window.open ကို နှစ်ခါသုံးထားခြင်းဖြစ်သည်
-js_code = f"""
+st.info("အောက်ကခလုတ်ကို နှိပ်လိုက်လျှင် ကြော်ငြာနှင့် ဗီဒီယိုတို့သည် Tab အသစ်များတွင် ပွင့်လာပါလိမ့်မည်။")
+
+# --- ၃။ Tab အသစ် (New Tab) များဖြင့် ပွင့်စေမည့် ခလုတ် ---
+js_button = f"""
 <script>
-function openLinks() {{
-    window.open('{ad_link}', '_blank'); // ကြော်ငြာကို Tab အသစ်ဖြင့်ဖွင့်သည်
-    window.location.href = '{video_link}'; // မူရင်း Tab ကို Video Link ဆီ ပို့သည်
+function playMovie() {{
+    // Ads ကို Tab အသစ်မှာ ဖွင့်သည်
+    window.open('{smart_link}', '_blank'); 
+    
+    // Video ကိုလည်း နောက်ထပ် Tab အသစ်တစ်ခုဖြင့် ဖွင့်သည်
+    window.open('{video_link}', '_blank');
 }}
 </script>
-<button onclick="openLinks()" style="
-    background-color: #ff4b4b;
-    color: white;
-    padding: 15px 32px;
-    font-size: 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100%;
-">
-    🚀 Watch Full Movie Now (Server 1)
-</button>
-"""
 
-components.html(js_code, height=100)
+<div style="text-align:center;">
+    <button onclick="playMovie()" style="
+        background-color: #E50914; 
+        color: white; 
+        padding: 20px 40px; 
+        border: none; 
+        border-radius: 10px; 
+        cursor: pointer; 
+        font-size: 24px; 
+        width: 100%; 
+        font-weight: bold;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    ">
+        ▶️ CLICK TO WATCH NOW (NEW TAB)
+    </button>
+</div>
+"""
+components.html(js_button, height=150)
 
 st.write("---")
-st.info("မှတ်ချက် - ခလုတ်နှိပ်ပြီးနောက် ပွင့်လာသော ကြော်ငြာ Tab ကို ပိတ်၍ ရုပ်ရှင်ကို ကြည့်ရှုနိုင်ပါသည်။")
-
-
+st.caption("ကိုယ်တိုင်စမ်းသပ်ကြည့်ရန် ခလုတ်ကို တစ်ချက်နှိပ်လိုက်ပါ။")
