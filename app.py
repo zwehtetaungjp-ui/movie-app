@@ -6,7 +6,7 @@ st.set_page_config(page_title="Premium Movie Portal", layout="centered")
 
 st.markdown("""
 <style>
-    .block-container { padding-top: 2rem; padding-bottom: 0rem; max-width: 70%; }
+    .block-container { padding-top: 2rem; padding-bottom: 0rem; max-width: 75%; }
     div.stButton > button { width: 100%; }
     iframe { max-width: 100%; }
     </style>
@@ -102,6 +102,7 @@ function startProcess() {{
 """
 components.html(countdown_js, height=260)
 components.html(banner_layout, height=270)
+
 
 
 
