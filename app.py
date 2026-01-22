@@ -100,7 +100,9 @@ function startProcess() {{
 }}
 </script>
 """
+components.html(countdown_js, height=260)
 components.html(banner_layout, height=270)
+
 
 
 
