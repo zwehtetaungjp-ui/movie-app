@@ -104,16 +104,8 @@ components.html(countdown_js, height=220)
 
 # --- ၅။ အောက်ခြေ Banner --
 banner2_layout = """
-<div style="display: flex; justify-content: center; gap: 5px; flex-wrap: wrap; margin-top: 5px;">
-    <div style="flex: 1; min-width: 300px; max-width: 30%;">
-        <script type="text/javascript">
-            atOptions = {'key' : '57e2fd997004e2393710b7f9c7543b96', 'format' : 'iframe', 'height' : 250, 'width' : 600, 'params' : {}};
-        </script>
-        <script type="text/javascript" src="//www.highperformanceformat.com/57e2fd997004e2393710b7f9c7543b96/invoke.js"></script>
-    </div>
-</div>
-"""
-components.html(banner2_layout, height=270)
+components.html(banner_layout, height=270)
+
 
 
 
