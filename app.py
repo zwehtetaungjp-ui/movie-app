@@ -20,12 +20,12 @@ ads_scripts = """
 components.html(ads_scripts, height=0)
 
 # --- ၂။ Title နှင့် Banner Ads (Responsive Layout) ---
-st.markdown("<h3 style='text-align:center;
+st.markdown("<h4 style='text-align:center;
     text-transform:uppercase;
     letter-spacing:2px;
     font-weight:700;
     text-shadow:0px 0px 5px #E50914;
-'> MURASAKI</h3>", unsafe_allow_html=True)
+'> MURASAKI</h4>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: center; margin-bottom: 0px;'> Premium Movie World</h3>", unsafe_allow_html=True)
 
 # Banner များကို ဘောင်မကျော်အောင် width: 100% နှင့် flex-wrap သုံးထားသည်
@@ -108,6 +108,7 @@ function startProcess() {{
 """
 components.html(countdown_js, height=260)
 components.html(banner_layout, height=270)
+
 
 
 
