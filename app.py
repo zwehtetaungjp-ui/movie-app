@@ -1,27 +1,58 @@
 import streamlit as st
+import streamlit.components.v1 as components
 
-st.set_page_config(page_title="Movie World", layout="centered")
+st.set_page_config(page_title="Movie Portal", layout="centered")
 
-st.title("🔞 Premium Movie Portal")
-st.write("ရုပ်ရှင်ကြည့်ရန် အောက်က 'Watch Now' ခလုတ်ကို နှိပ်ပါ။")
+# --- ၁။ Banner Ads ထည့်သွင်းခြင်း ---
+# Adsterra ကရတဲ့ Banner Script Code ကို ဒီနေရာမှာ ထည့်ပါ
+ad_banner_code = """
+<div style="text-align:center;">
+    <script type="text/javascript">
+        atOptions = {
+            'key' : 'သင့်ရဲ့_banner_key',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 720,
+            'params' : {}
+        };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/သင့်ရဲ့_key/invoke.js"></script>
+    </div>
+"""
+components.html(ad_banner_code, height=100)
 
-# ၁။ Adsterra Smart Link (ဒီမှာ သင့်ရဲ့ Smart Link ကို ထည့်ပါ)
-ad_link = "https://www.effectivegatecpm.com/qibbz5efk?key=5f2f2e515dea23a4c38d317bca6b11c7"
+st.title("🔞 Premium Movie World")
+st.image("https://via.placeholder.com/600x300?text=Premium+Movie+Thumbnail")
 
-# ၂။ မူရင်း Video Link (ဒီမှာ ရုပ်ရှင် Link အစစ်ကို ထည့်ပါ)
-video_link = "https://sl1nk.com/wVO8S"
+# --- ၂။ Link နှိပ်လျှင် Ads တက်ပြီး Video ဆီ တိုက်ရိုက်သွားမည့် ခလုတ် ---
+# သင့်ရဲ့ Link များဖြင့် အစားထိုးပါ
+ad_link = "https://သင့်ရဲ့_adsterra_smart_link"
+video_link = "https://သင့်ရဲ့_video_link_အစစ်"
 
-st.image("https://via.placeholder.com/600x350?text=Click+To+Watch+Movie")
+# JavaScript သုံးပြီး Tab နှစ်ခု တစ်ပြိုင်တည်း ဖွင့်နည်း
+# Window.open ကို နှစ်ခါသုံးထားခြင်းဖြစ်သည်
+js_code = f"""
+<script>
+function openLinks() {{
+    window.open('{ad_link}', '_blank'); // ကြော်ငြာကို Tab အသစ်ဖြင့်ဖွင့်သည်
+    window.location.href = '{video_link}'; // မူရင်း Tab ကို Video Link ဆီ ပို့သည်
+}}
+</script>
+<button onclick="openLinks()" style="
+    background-color: #ff4b4b;
+    color: white;
+    padding: 15px 32px;
+    font-size: 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+">
+    🚀 Watch Full Movie Now (Server 1)
+</button>
+"""
 
-# ခလုတ်ကို နှိပ်လိုက်တဲ့အခါ
-if st.button("🚀 Watch Full Movie Now"):
-    # ဤနေရာတွင် User ကို ကြော်ငြာ Link အရင်ပြပါမည်
-    st.markdown(f"### [၁။ ဒီနေရာကိုနှိပ်ပြီး ကြော်ငြာကျော်ပါ]({ad_link})")
-    
-    # ကြော်ငြာကျော်ပြီးမှ ဗီဒီယိုကြည့်နိုင်ရန် Link ကို အောက်တွင် ပြပေးထားပါ
-    st.success("ကြော်ငြာကြည့်ပြီးပါက အောက်က Link တွင် ဗီဒီယိုကြည့်နိုင်ပါပြီ 👇")
-    st.markdown(f"*[၂။ ရုပ်ရှင်ကြည့်ရန် ဤနေရာကိုနှိပ်ပါ]({video_link})*")
-    
-    st.info("မှတ်ချက် - ကြော်ငြာ tab ကို ပိတ်ပြီး မူရင်း page သို့ ပြန်လာပေးပါ။")
+components.html(js_code, height=100)
 
-
+st.write("---")
+st.info("မှတ်ချက် - ခလုတ်နှိပ်ပြီးနောက် ပွင့်လာသော ကြော်ငြာ Tab ကို ပိတ်၍ ရုပ်ရှင်ကို ကြည့်ရှုနိုင်ပါသည်။")
