@@ -25,7 +25,7 @@ st.markdown("<h3 style='text-align: center; margin-bottom: 0px;'> Premium Movie 
 # Banner များကို ဘောင်မကျော်အောင် width: 100% နှင့် flex-wrap သုံးထားသည်
 banner_layout = """
 <div style="display: flex; justify-content: center; gap: 5px; flex-wrap: wrap; margin-top: 5px;">
-    <div style="flex: 1; min-width: 300px; max-width: 320px;">
+    <div style="flex: 1; min-width: 300px; max-width: 30%;">
         <script type="text/javascript">
             atOptions = {'key' : '6edd15a0ba83c13d90e58d064b3f416f', 'format' : 'iframe', 'height' : 250, 'width' : 600, 'params' : {}};
         </script>
@@ -105,6 +105,7 @@ components.html(countdown_js, height=220)
 # --- ၅။ အောက်ခြေ Banner ---
 
 components.html(banner_layout, height=270)
+
 
 
 
