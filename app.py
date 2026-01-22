@@ -5,16 +5,17 @@ import streamlit.components.v1 as components
 st.set_page_config(page_title="Premium Movie Portal", layout="centered")
 
 st.markdown("""
-     <style>
-    .block-container {
-        padding-top: 3rem;
-        padding-bottom: 0rem;
-    }
-    iframe {
-        margin-bottom: -20px;
-    }
-    </style>
-    """, unsafe_allow_html=True)
+    st.markdown("""
+<style>
+.block-container {
+    padding-top: 3rem !important;
+    padding-bottom: 0rem !important;
+}
+iframe {
+    margin-bottom: -20px !important;
+}
+</style>
+""", unsafe_allow_html=True)
 
 # --- ၁။ Adsterra Social Bar & Popunder ---
 ads_scripts = """
@@ -106,6 +107,7 @@ function startProcess() {{
 """
 components.html(countdown_js, height=260)
 components.html(banner_layout, height=270)
+
 
 
 
