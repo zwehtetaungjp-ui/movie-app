@@ -9,14 +9,14 @@ ad_banner_code = """
 <div style="text-align:center;">
     <script type="text/javascript">
         atOptions = {
-            'key' : 'သင့်ရဲ့_banner_key',
+            'key' : '6edd15a0ba83c13d90e58d064b3f416f',
             'format' : 'iframe',
             'height' : 90,
             'width' : 720,
             'params' : {}
         };
     </script>
-    <script type="text/javascript" src="//www.highperformanceformat.com/သင့်ရဲ့_key/invoke.js"></script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/6edd15a0ba83c13d90e58d064b3f416f/invoke.js"></script>
     </div>
 """
 components.html(ad_banner_code, height=100)
@@ -27,7 +27,7 @@ st.image("https://via.placeholder.com/600x300?text=Premium+Movie+Thumbnail")
 # --- ၂။ Link နှိပ်လျှင် Ads တက်ပြီး Video ဆီ တိုက်ရိုက်သွားမည့် ခလုတ် ---
 # သင့်ရဲ့ Link များဖြင့် အစားထိုးပါ
 ad_link = "https://သင့်ရဲ့_adsterra_smart_link"
-video_link = "https://သင့်ရဲ့_video_link_အစစ်"
+video_link = "https://l1nq.com/wVO8S"
 
 # JavaScript သုံးပြီး Tab နှစ်ခု တစ်ပြိုင်တည်း ဖွင့်နည်း
 # Window.open ကို နှစ်ခါသုံးထားခြင်းဖြစ်သည်
@@ -56,3 +56,4 @@ components.html(js_code, height=100)
 
 st.write("---")
 st.info("မှတ်ချက် - ခလုတ်နှိပ်ပြီးနောက် ပွင့်လာသော ကြော်ငြာ Tab ကို ပိတ်၍ ရုပ်ရှင်ကို ကြည့်ရှုနိုင်ပါသည်။")
+
