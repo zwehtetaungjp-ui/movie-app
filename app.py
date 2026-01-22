@@ -112,6 +112,7 @@ banner2_layout = """
         <script type="text/javascript" src="//www.highperformanceformat.com/57e2fd997004e2393710b7f9c7543b96/invoke.js"></script>
     </div>
 </div>
+"""
 
 
 
