@@ -100,11 +100,8 @@ function startProcess() {{
 }}
 </script>
 """
-components.html(countdown_js, height=220)
-
-# --- ၅။ အောက်ခြေ Banner --
-banner2_layout = """
 components.html(banner_layout, height=270)
+
 
 
 
