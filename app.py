@@ -68,7 +68,7 @@ function startProcess() {{
     let countdown = setInterval(function() {{
         timeLeft--;
         timerElement.textContent = timeLeft;
-        progressBar.style.width = ((5 - timeLeft) * 20) + '%';
+        progressBar.style.width = ((10 - timeLeft) * 20) + '%';
 
         if (timeLeft <= 0) {{
             clearInterval(countdown);
@@ -85,4 +85,5 @@ components.html(countdown_js, height=250)
 
 st.write("---")
 st.caption("How to watch: Click Watch Movie -> Wait 5s -> Click the Green Button.")
+
 
