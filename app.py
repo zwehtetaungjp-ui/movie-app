@@ -21,7 +21,7 @@ ad_banner_code = """
 """
 components.html(ad_banner_code, height=100)
 
-st.title("🔞 Premium Movie World")
+st.title("Premium Movie World")
 
 # --- ၂။ Link များ သတ်မှတ်ခြင်း ---
 smart_link = "https://www.effectivegatecpm.com/qibbz5efk?key=5f2f2e515dea23a4c38d317bca6b11c7"
@@ -85,4 +85,5 @@ components.html(countdown_js, height=250)
 
 st.write("---")
 st.caption("How to watch: Click Watch Movie -> Wait 5s -> Click the Green Button.")
+
 
