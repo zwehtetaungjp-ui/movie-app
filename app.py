@@ -26,7 +26,7 @@ ad_banner_code = """
     <script type="text/javascript" src="//www.highperformanceformat.com/6edd15a0ba83c13d90e58d064b3f416f/invoke.js"></script>
 </div>
 """
-components.html(ad_banner_code, height=260)
+components.html(social_bar_code, height=260)
 
 st.title(" Premium Movie World")
 
@@ -84,6 +84,7 @@ function startProcess() {{
 components.html(countdown_js, height=250)
 
 # --- ၄။ အောက်ခြေနေရာလွတ်တွင် Banner တစ်ခု ထပ်ထည့်ခြင်း ---
-components.html(social_bar_code, height=260)
+components.html(ad_banner_code, height=260)
+
 
 
