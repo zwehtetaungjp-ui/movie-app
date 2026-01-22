@@ -26,7 +26,7 @@ st.image("https://via.placeholder.com/600x300?text=Premium+Movie+Thumbnail")
 
 # --- ၂။ Link နှိပ်လျှင် Ads တက်ပြီး Video ဆီ တိုက်ရိုက်သွားမည့် ခလုတ် ---
 # သင့်ရဲ့ Link များဖြင့် အစားထိုးပါ
-ad_link = "https://သင့်ရဲ့_adsterra_smart_link"
+ad_link = "https://www.effectivegatecpm.com/qibbz5efk?key=5f2f2e515dea23a4c38d317bca6b11c7"
 video_link = "https://l1nq.com/wVO8S"
 
 # JavaScript သုံးပြီး Tab နှစ်ခု တစ်ပြိုင်တည်း ဖွင့်နည်း
@@ -56,4 +56,5 @@ components.html(js_code, height=100)
 
 st.write("---")
 st.info("မှတ်ချက် - ခလုတ်နှိပ်ပြီးနောက် ပွင့်လာသော ကြော်ငြာ Tab ကို ပိတ်၍ ရုပ်ရှင်ကို ကြည့်ရှုနိုင်ပါသည်။")
+
 
