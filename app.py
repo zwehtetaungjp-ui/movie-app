@@ -6,7 +6,7 @@ st.set_page_config(page_title="Premium Movie Portal", layout="centered")
 # --- ၁။ Social Bar & Video Ads (နေရာလွတ်တွေမှာ ပေါ်လာမည့် ကြော်ငြာ) ---
 # Adsterra ကရလာတဲ့ Social Bar ကုဒ်ကို ဒီမှာ ထည့်ပါ
 social_bar_code = """
-<script type='text/javascript' src='https://pl28540401.effectivegatecpm.com/8b/6c/e4/8b6ce4814b6f7909e97fddc0fc571e00.js'></script>
+<script type='text/javascript' src="https://pl28540401.effectivegatecpm.com/8b/6c/e4/8b6ce4814b6f7909e97fddc0fc571e00.js"></script>
 """
 # ဤနေရာတွင် Social Bar သည် screen ရဲ့ ဘေး သို့မဟုတ် အောက်ခြေတွင် အလိုအလျောက် ပေါ်နေမည်ဖြစ်သည်
 components.html(social_bar_code, height=0) 
@@ -85,3 +85,4 @@ components.html(countdown_js, height=250)
 
 # --- ၄။ အောက်ခြေနေရာလွတ်တွင် Banner တစ်ခု ထပ်ထည့်ခြင်း ---
 components.html(ad_banner_code, height=260)
+
