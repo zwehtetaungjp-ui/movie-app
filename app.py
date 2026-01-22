@@ -113,6 +113,8 @@ banner2_layout = """
     </div>
 </div>
 """
+components.html(banner2_layout, height=270)
+
 
 
 
