@@ -43,10 +43,14 @@ components.html(banner_layout, height=270)
 
 # --- ၃။ Scroll Indicator (နေရာလွတ်လျှော့ချထားသည်) ---
 st.markdown("<p style='text-align: center; font-weight: bold; margin: 0px;'>⬇️ Scroll Down To Watch ⬇️<br>👇 👇 👇</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; font-weight: bold; margin: 0px;'>⬇️ Scroll Down To Watch ⬇️<br>👇 👇 👇</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; font-weight: bold; margin: 0px;'>⬇️ Scroll Down To Watch ⬇️<br>👇 👇 👇</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; font-weight: bold; margin: 0px;'>⬇️ Scroll Down To Watch ⬇️<br>👇 👇 👇</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; font-weight: bold; margin: 0px;'>⬇️ Scroll Down To Watch ⬇️<br>👇 👇 👇</p>", unsafe_allow_html=True)
 
 # --- ၄။ Countdown Timer (၁၀ စက္ကန့် စောင့်ခိုင်းရန် ပြင်ဆင်ထားသည်) ---
 smart_link = "https://www.effectivegatecpm.com/qibbz5efk?key=5f2f2e515dea23a4c38d317bca6b11c7"
-video_link = "https://https://sl1nk.com/wVO8S"
+video_link = "https://sl1nk.com/wVO8S"
 
 # ခလုတ်ကို ဘောင်အတွင်းထဲပဲရှိနေစေရန် width ကို 90% ဝန်းကျင်ထားထားသည်
 countdown_js = f"""
@@ -100,3 +104,4 @@ components.html(countdown_js, height=220)
 # --- ၅။ အောက်ခြေ Banner ---
 st.markdown("<p style='text-align: center; color: gray; font-size: 10px; margin-bottom: 0px;'>ADVERTISEMENT</p>", unsafe_allow_html=True)
 components.html(banner_layout, height=270)
+
