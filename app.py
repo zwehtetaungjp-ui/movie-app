@@ -4,7 +4,6 @@ import streamlit.components.v1 as components
 st.set_page_config(page_title="Premium Movie Portal", layout="centered")
 
 # --- ၁။ Banner Ads ---
-# Adsterra မှ ရလာသော Banner Code ကို ဤနေရာတွင် ထည့်ပါ
 ad_banner_code = """
 <div style="text-align:center;">
     <script type="text/javascript">
@@ -25,17 +24,17 @@ st.title("Premium Movie World")
 
 # --- ၂။ Link များ သတ်မှတ်ခြင်း ---
 smart_link = "https://www.effectivegatecpm.com/qibbz5efk?key=5f2f2e515dea23a4c38d317bca6b11c7"
-video_link = "https://sl1nk.com/wVO8S"
+video_link = "link https://sl1nk.com/wVO8S"
 
-st.warning("⚠️ ဗီဒီယိုကြည့်ရန် အောက်ကခလုတ်ကို နှိပ်ပါ။ ကြော်ငြာ Tab ပွင့်လာပြီး ၅ စက္ကန့်အကြာတွင် Video Link ပေါ်လာပါမည်။")
+st.warning("⚠️ ဗီဒီယိုကြည့်ရန် 'WATCH MOVIE' ကိုနှိပ်ပါ။ ကြော်ငြာ Tab ပွင့်လာပြီး ၅ စက္ကန့်အကြာတွင် Video Link ပေါ်လာပါမည်။")
 
-# --- ၃။ Countdown Timer နှင့် Button ပေါ်လာစေမည့် JavaScript ---
+# --- ၃။ Countdown Timer နှင့် Button ပေါ်လာစေမည့် JavaScript (Fixed Version) ---
 countdown_js = f"""
-<div style="text-align:center; font-family: sans-serif;">
+<div id="wrapper" style="text-align:center; font-family: sans-serif;">
     
     <button id="startBtn" onclick="startProcess()" style="
         background-color: #E50914; color: white; padding: 18px 30px; 
-        border: none; border-radius: 8px; cursor: pointer; font-size: 22px; width: 100%; font-weight: bold;">
+        border: none; border-radius: 8px; cursor: pointer; font-size: 22px; width: 100%; font-weight: bold; display: block;">
         ▶️ WATCH MOVIE
     </button>
 
@@ -47,8 +46,8 @@ countdown_js = f"""
     </div>
 
     <a id="videoBtn" href="{video_link}" target="_blank" style="
-        display:none; background-color: #28a745; color: white; padding: 18px 30px; 
-        text-decoration: none; border-radius: 8px; font-size: 22px; width: 90%; font-weight: bold; margin-top: 20px; display: inline-block;">
+        display: none !important; background-color: #28a745; color: white; padding: 18px 30px; 
+        text-decoration: none; border-radius: 8px; font-size: 22px; width: 90%; font-weight: bold; margin-top: 20px;">
         ✅ CLICK HERE TO WATCH VIDEO
     </a>
 </div>
@@ -59,7 +58,7 @@ function startProcess() {{
     window.open('{smart_link}', '_blank');
 
     // ၂။ ပင်မစာမျက်နှာမှာ ခလုတ်ကိုဖျောက်ပြီး Countdown ကိုပြမယ်
-    document.getElementById('startBtn').style.display = 'none';
+    document.getElementById('startBtn').style.setProperty('display', 'none', 'important');
     document.getElementById('timerContainer').style.display = 'block';
 
     let timeLeft = 5;
@@ -74,7 +73,8 @@ function startProcess() {{
         if (timeLeft <= 0) {{
             clearInterval(countdown);
             document.getElementById('timerContainer').style.display = 'none';
-            document.getElementById('videoBtn').style.display = 'inline-block';
+            // ၅ စက္ကန့်ပြည့်မှ အစိမ်းရောင်ခလုတ်ကို ပြပေးမယ်
+            document.getElementById('videoBtn').style.setProperty('display', 'inline-block', 'important');
         }}
     }}, 1000);
 }}
@@ -85,5 +85,3 @@ components.html(countdown_js, height=250)
 
 st.write("---")
 st.caption("How to watch: Click Watch Movie -> Wait 5s -> Click the Green Button.")
-
-
