@@ -43,9 +43,13 @@ components.html(banner_layout, height=270)
 
 # --- ၃။ Scroll Indicator (နေရာလွတ်လျှော့ချထားသည်) ---
 st.markdown("<p style='text-align: center; font-weight: bold; margin: 0px;'>⬇️ Scroll Down To Watch ⬇️<br>👇 👇 👇</p>", unsafe_allow_html=True)
+
 st.markdown("<p style='text-align: center; font-weight: bold; margin: 0px;'>⬇️ Scroll Down To Watch ⬇️<br>👇 👇 👇</p>", unsafe_allow_html=True)
+
 st.markdown("<p style='text-align: center; font-weight: bold; margin: 0px;'>⬇️ Scroll Down To Watch ⬇️<br>👇 👇 👇</p>", unsafe_allow_html=True)
+
 st.markdown("<p style='text-align: center; font-weight: bold; margin: 0px;'>⬇️ Scroll Down To Watch ⬇️<br>👇 👇 👇</p>", unsafe_allow_html=True)
+
 st.markdown("<p style='text-align: center; font-weight: bold; margin: 0px;'>⬇️ Scroll Down To Watch ⬇️<br>👇 👇 👇</p>", unsafe_allow_html=True)
 
 # --- ၄။ Countdown Timer (၁၀ စက္ကန့် စောင့်ခိုင်းရန် ပြင်ဆင်ထားသည်) ---
@@ -104,4 +108,5 @@ components.html(countdown_js, height=220)
 # --- ၅။ အောက်ခြေ Banner ---
 st.markdown("<p style='text-align: center; color: gray; font-size: 10px; margin-bottom: 0px;'>ADVERTISEMENT</p>", unsafe_allow_html=True)
 components.html(banner_layout, height=270)
+
 
