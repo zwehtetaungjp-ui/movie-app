@@ -7,7 +7,7 @@ st.set_page_config(page_title="Premium Movie Portal", layout="centered")
 st.markdown("""
      <style>
     .block-container {
-        padding-top: 2rem;
+        padding-top: 3rem;
         padding-bottom: 0rem;
     }
     iframe {
@@ -106,6 +106,7 @@ function startProcess() {{
 """
 components.html(countdown_js, height=260)
 components.html(banner_layout, height=270)
+
 
 
 
