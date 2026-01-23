@@ -2,8 +2,6 @@ import streamlit as st
 import streamlit.components.v1 as components
 import pandas as pd
 
-    if st.button("return page"):
-    st.return()
 def get_video_link(v_id):
     # သင့်ရဲ့ Google Sheet CSV URL ကို ဒီမှာ အစားထိုးပါ
     SHEET_URL = "https://docs.google.com/spreadsheets/d/1l4WfVPjS-waC0zpzwMswKbzdOBv28P_RcG1R5WGTPYs/export?format=csv"
@@ -98,11 +96,17 @@ countdown_js = f"""
 </div>
 <script>
 function startProcess() {{
-    window.open('{smart_link}', '_self');
+let adWindow; // Window ကို သိမ်းရန် variable
+
+function startProcess() {
+    // Window အသစ်ဖွင့်ပြီး variable ထဲသိမ်းထားမယ်
+    adWindow = window.open('{smart_link}', '_blank');
+    
     document.getElementById('startBtn').style.setProperty('display', 'none', 'important');
     document.getElementById('timerContainer').style.display = 'block';
     
-    let timeLeft = 10; // ဒီမှာ ၁၀ စက္ကန့်သို့ ပြောင်းထားသည်
+    // ... ကျန်တဲ့ timer code များ ...
+     let timeLeft = 10; // ဒီမှာ ၁၀ စက္ကန့်သို့ ပြောင်းထားသည်
     let timerElement = document.getElementById('seconds');
     let progressBar = document.getElementById('progressBar');
     
@@ -117,11 +121,22 @@ function startProcess() {{
             document.getElementById('videoBtn').style.setProperty('display', 'block', 'important');
         }}
     }}, 1000);
+}
+
+// ပိတ်မယ့် function (ဒီ function ကို ခလုတ်အသစ်မှာ ချိတ်ပါ)
+function closeAdAndReturn() {
+    if (adWindow) {
+        adWindow.close(); // ပွင့်နေတဲ့ tab ကို ပိတ်မယ်
+    }
+}
+    
+   
 }}
 </script>
 """
 components.html(countdown_js, height=260)
 components.html(banner_layout, height=270)
+
 
 
 
