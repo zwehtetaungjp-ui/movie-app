@@ -128,7 +128,7 @@ function closeModal() {
     startTimer();
 }
 
-function startTimer() {
+function startTimer() {{
     let timeLeft = 10;
     let timerElement = document.getElementById('seconds');
     let progressBar = document.getElementById('progressBar');
@@ -144,12 +144,13 @@ function startTimer() {
             document.getElementById('timerContainer').style.display = 'none';
         }
     }, 1000);
-}
+}}
 </script>
 """
 
 components.html(countdown_js, height=260)
 components.html(banner_layout, height=270)
+
 
 
 
