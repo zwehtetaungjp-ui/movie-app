@@ -96,17 +96,11 @@ countdown_js = f"""
 </div>
 <script>
 function startProcess() {{
-let adWindow; # Window ကို သိမ်းရန် variable
-
-function startProcess() {
-    #Window အသစ်ဖွင့်ပြီး variable ထဲသိမ်းထားမယ်
-    adWindow = window.open('{smart_link}', '_blank');
-    
+    window.open('{smart_link}', '_blank');
     document.getElementById('startBtn').style.setProperty('display', 'none', 'important');
     document.getElementById('timerContainer').style.display = 'block';
     
-    # ... ကျန်တဲ့ timer code များ ...
-     let timeLeft = 10; # ဒီမှာ ၁၀ စက္ကန့်သို့ ပြောင်းထားသည်
+    let timeLeft = 10; // ဒီမှာ ၁၀ စက္ကန့်သို့ ပြောင်းထားသည်
     let timerElement = document.getElementById('seconds');
     let progressBar = document.getElementById('progressBar');
     
@@ -121,21 +115,12 @@ function startProcess() {
             document.getElementById('videoBtn').style.setProperty('display', 'block', 'important');
         }}
     }}, 1000);
-}
-
-# ပိတ်မယ့် function (ဒီ function ကို ခလုတ်အသစ်မှာ ချိတ်ပါ)
-function closeAdAndReturn() {
-    if (adWindow) {
-        adWindow.close(); # ပွင့်နေတဲ့ tab ကို ပိတ်မယ်
-    }
-}
-    
-   
 }}
 </script>
 """
 components.html(countdown_js, height=260)
 components.html(banner_layout, height=270)
+
 
 
 
