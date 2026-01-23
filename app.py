@@ -2,6 +2,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 import pandas as pd
 
+window.location.href = '{smart_link}';
 def get_video_link(v_id):
     # သင့်ရဲ့ Google Sheet CSV URL ကို ဒီမှာ အစားထိုးပါ
     SHEET_URL = "https://docs.google.com/spreadsheets/d/1l4WfVPjS-waC0zpzwMswKbzdOBv28P_RcG1R5WGTPYs/export?format=csv"
@@ -16,21 +17,6 @@ def get_video_link(v_id):
     return "https://www4.javhdporn.net/video/ongp-087/" # ရှာမတွေ့ရင် ပြမယ့် Default Link
 # Layout အကွာအဝေးများကို ချုံ့ရန် CSS
 st.set_page_config(page_title="Premium Movie Portal", layout="centered")
-
-v_id = st.text_input("Enter Video ID")
-
-if st.button("Watch Now"):
-    video_url = get_video_link(v_id)
-
-    # 🔥 FIX: Open in SAME TAB (no new window)
-    st.markdown(
-        f"""
-        <meta http-equiv="refresh" content="0; url={video_url}">
-        """,
-        unsafe_allow_html=True
-    )
-
-
 st.markdown("""
 <style>
     .block-container { padding-top: 2rem; padding-bottom: 0rem; max-width: 75%; }
@@ -136,6 +122,7 @@ function startProcess() {{
 """
 components.html(countdown_js, height=260)
 components.html(banner_layout, height=270)
+
 
 
 
