@@ -80,7 +80,7 @@ countdown_js = f"""
         border: none; border-radius: 8px; cursor: pointer; font-size: 20px; width: 100%; font-weight: bold;">
         ▶️ WATCH FULL MOVIE NOW
     </button>
-<button onclick=history.back()">Back</button>
+
     <div id="timerContainer" style="display:none; margin-top: 10px;">
         <p style="font-size: 16px; margin-bottom: 5px;">Loading Video... <span id="seconds">10</span>s</p>
         <div style="width: 100%; background-color: #ddd; border-radius: 5px;">
@@ -121,6 +121,7 @@ function startProcess() {{
 """
 components.html(countdown_js, height=260)
 components.html(banner_layout, height=270)
+
 
 
 
