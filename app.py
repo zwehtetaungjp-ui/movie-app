@@ -1,6 +1,20 @@
 import streamlit as st
 import streamlit.components.v1 as components
-SHEET_URL = "https://docs.google.com/spreadsheets/d/1l4WfVPjS-waC0zpzwMswKbzdOBv28P_RcG1R5WGTPYs/export?format=csv"
+import pandas as pd
+
+def get_video_link(v_id):
+    # သင့်ရဲ့ Google Sheet CSV URL ကို ဒီမှာ အစားထိုးပါ
+    SHEET_URL = "https://docs.google.com/spreadsheets/d/1l4WfVPjS-waC0zpzwMswKbzdOBv28P_RcG1R5WGTPYs/export?format=csv"
+    try:
+        df = pd.read_csv(SHEET_URL)
+        # Sheet ထဲက id နဲ့ တူတာကို ရှာတာပါ
+        result = df[df['id'].astype(str) == str(v_id)]
+        if not result.empty:
+            return result.iloc[0]['video_url']
+    except Exception as e:
+        st.error(f"Error reading sheet: {e}")
+    return "https://www4.javhdporn.net/video/ongp-087/" # ရှာမတွေ့ရင် ပြမယ့် Default Link
+
 # Layout အကွာအဝေးများကို ချုံ့ရန် CSS
 st.set_page_config(page_title="Premium Movie Portal", layout="centered")
 
@@ -52,6 +66,7 @@ components.html(banner_layout, height=270)
 st.markdown("<p style='text-align: center; font-weight: bold; margin: 0px;'>⬇️ Scroll Down To Watch ⬇️<br>👇 👇 👇<br>👇 👇 👇<br>⬇️ Scroll Down To Watch ⬇️<br>👇 👇 👇<br>👇 👇 👇<br>⬇️ Scroll Down To Watch ⬇️<br>👇 👇 👇<br>👇 👇 👇<br>⬇️ Scroll Down To Watch ⬇️<br>👇 👇 👇<br>👇 👇 👇</p>", unsafe_allow_html=True)
 # --- ၄။ Countdown Timer (၁၀ စက္ကန့် စောင့်ခိုင်းရန် ပြင်ဆင်ထားသည်) ---
 smart_link = "https://www.effectivegatecpm.com/qibbz5efk?key=5f2f2e515dea23a4c38d317bca6b11c7"
+
 # URL ကနေ ?id=... ဆိုတာကို ဖတ်ခိုင်းတာပါ
 query_params = st.query_params
 video_id = query_params.get("id", "1") # id မပါရင် အမှတ် ၁ ကို ပြမယ်
@@ -108,6 +123,7 @@ function startProcess() {{
 """
 components.html(countdown_js, height=260)
 components.html(banner_layout, height=270)
+
 
 
 
