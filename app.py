@@ -2,6 +2,8 @@ import streamlit as st
 import streamlit.components.v1 as components
 import pandas as pd
 
+    if st.button("return page"):
+    st.return()
 def get_video_link(v_id):
     # သင့်ရဲ့ Google Sheet CSV URL ကို ဒီမှာ အစားထိုးပါ
     SHEET_URL = "https://docs.google.com/spreadsheets/d/1l4WfVPjS-waC0zpzwMswKbzdOBv28P_RcG1R5WGTPYs/export?format=csv"
@@ -74,8 +76,6 @@ video_link = get_video_link(video_id)
 
 # ခလုတ်ကို ဘောင်အတွင်းထဲပဲရှိနေစေရန် width ကို 90% ဝန်းကျင်ထားထားသည်
 countdown_js = f"""
-    if st.button("return page"):
-    st.return()
 <div id="wrapper" style="text-align:center; font-family: sans-serif; padding: 10px; border: 2px dashed #E50914; border-radius: 10px; max-width: 95%; margin: auto;">
     <button id="startBtn" onclick="startProcess()" style="
         background-color: #E50914; color: white; padding: 15px; 
@@ -122,6 +122,7 @@ function startProcess() {{
 """
 components.html(countdown_js, height=260)
 components.html(banner_layout, height=270)
+
 
 
 
