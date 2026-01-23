@@ -97,7 +97,7 @@ countdown_js = f"""
 
 <script>
 function startProcess() {{
-    window.location.href = '{smart_link}';
+    window.open('{smart_link}', '_blank');
     document.getElementById('startBtn').style.setProperty('display', 'none', 'important');
     document.getElementById('timerContainer').style.display = 'block';
     
@@ -121,6 +121,7 @@ function startProcess() {{
 """
 components.html(countdown_js, height=260)
 components.html(banner_layout, height=270)
+
 
 
 
