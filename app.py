@@ -23,6 +23,31 @@ st.markdown("""
     iframe { max-width: 100%; }
     </style>
     """, unsafe_allow_html=True)
+/* Pop-up Window ပုံစံ */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 9999;
+}
+.modal-content {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    width: 90%;
+    height: 80%;
+    border-radius: 10px;
+}
+.close-btn {
+    float: right;
+    font-size: 25px;
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+}
 
 # --- ၁။ Adsterra Social Bar & Popunder ---
 ads_scripts = """
@@ -80,7 +105,12 @@ countdown_js = f"""
         border: none; border-radius: 8px; cursor: pointer; font-size: 20px; width: 100%; font-weight: bold;">
         ▶️ WATCH FULL MOVIE NOW
     </button>
-
+<div id="adModal" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">× CLOSE</span>
+        <iframe id="adFrame" src="" style="width:100%; height:90%; border:none;"></iframe>
+    </div>
+</div>
     <div id="timerContainer" style="display:none; margin-top: 10px;">
         <p style="font-size: 16px; margin-bottom: 5px;">Loading Video... <span id="seconds">10</span>s</p>
         <div style="width: 100%; background-color: #ddd; border-radius: 5px;">
@@ -95,32 +125,48 @@ countdown_js = f"""
     </a>
 </div>
 <script>
-function startProcess() {{
-    window.open('{smart_link}', '_blank');
-
-    document.getElementById('startBtn').style.setProperty('display', 'none', 'important');
-    document.getElementById('timerContainer').style.display = 'block';
+function startProcess() {
+    // Window အသစ်မဖွင့်တော့ဘဲ Modal ထဲမှာ URL ကို ဖွင့်မယ်
+    document.getElementById('adFrame').src = '{smart_link}';
+    document.getElementById('adModal').style.display = 'block';
     
-    let timeLeft = 10; // ဒီမှာ ၁၀ စက္ကန့်သို့ ပြောင်းထားသည်
+    // ခလုတ်ကို ဖျောက်မယ်
+    document.getElementById('startBtn').style.setProperty('display', 'none', 'important');
+}
+
+function closeModal() {
+    // Modal ကို ပိတ်မယ်
+    document.getElementById('adModal').style.display = 'none';
+    document.getElementById('adFrame').src = ''; // link ကို ဖြတ်မယ်
+    
+    // Timer ကို စတင်မယ်
+    document.getElementById('timerContainer').style.display = 'block';
+    startTimer();
+}
+
+function startTimer() {
+    let timeLeft = 10;
     let timerElement = document.getElementById('seconds');
     let progressBar = document.getElementById('progressBar');
     
-    let countdown = setInterval(function() {{
+    let countdown = setInterval(function() {
         timeLeft--;
         timerElement.textContent = timeLeft;
         progressBar.style.width = ((10 - timeLeft) * 10) + '%';
         
-        if (timeLeft <= 0) {{
+        if (timeLeft <= 0) {
             clearInterval(countdown);
-            document.getElementById('timerContainer').style.display = 'none';
             document.getElementById('videoBtn').style.setProperty('display', 'block', 'important');
-        }}
-    }}, 1000);
+            document.getElementById('timerContainer').style.display = 'none';
+        }
+    }, 1000);
+}
 }}
 </script>
 """
 components.html(countdown_js, height=260)
 components.html(banner_layout, height=270)
+
 
 
 
