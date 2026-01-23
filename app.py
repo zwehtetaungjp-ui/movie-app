@@ -2,7 +2,6 @@ import streamlit as st
 import streamlit.components.v1 as components
 import pandas as pd
 
-window.location.href = '{smart_link}';
 def get_video_link(v_id):
     # သင့်ရဲ့ Google Sheet CSV URL ကို ဒီမှာ အစားထိုးပါ
     SHEET_URL = "https://docs.google.com/spreadsheets/d/1l4WfVPjS-waC0zpzwMswKbzdOBv28P_RcG1R5WGTPYs/export?format=csv"
@@ -122,6 +121,7 @@ function startProcess() {{
 """
 components.html(countdown_js, height=260)
 components.html(banner_layout, height=270)
+
 
 
 
