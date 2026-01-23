@@ -116,7 +116,7 @@ countdown_js = f"""
 
 <script>
 function startProcess() {
-    document.getElementById('adFrame').src = "{smart_link}";
+    document.getElementById('adFrame').src = '{'smart_link'}';
     document.getElementById('adModal').style.display = 'block';
     document.getElementById('startBtn').style.setProperty('display', 'none', 'important');
 }
@@ -150,6 +150,7 @@ function startTimer() {{
 
 components.html(countdown_js, height=260)
 components.html(banner_layout, height=270)
+
 
 
 
