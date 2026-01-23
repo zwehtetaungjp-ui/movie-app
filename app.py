@@ -88,7 +88,7 @@ countdown_js = f"""
         </div>
     </div>
 
-    <a id="videoBtn" href="{video_link}" target="_self" style="
+    <a id="videoBtn" href="{video_link}" target="_blank" style="
         display: none !important; background-color: #28a745; color: white; padding: 15px; 
         text-decoration: none; border-radius: 8px; font-size: 20px; width: 100%; font-weight: bold; margin-top: 10px; box-sizing: border-box;">
         ✅ CLICK HERE TO WATCH VIDEO
@@ -121,6 +121,7 @@ function startProcess() {{
 """
 components.html(countdown_js, height=260)
 components.html(banner_layout, height=270)
+
 
 
 
