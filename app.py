@@ -95,36 +95,33 @@ countdown_js = f"""
     </a>
 </div>
 
-function startProcess() {
+<script>
+function startProcess() {{
+    window.location.href = '{smart_link}';
     document.getElementById('startBtn').style.setProperty('display', 'none', 'important');
     document.getElementById('timerContainer').style.display = 'block';
-
-    let timeLeft = 10;
+    
+    let timeLeft = 10; // ဒီမှာ ၁၀ စက္ကန့်သို့ ပြောင်းထားသည်
     let timerElement = document.getElementById('seconds');
     let progressBar = document.getElementById('progressBar');
-
-    let countdown = setInterval(function () {
+    
+    let countdown = setInterval(function() {{
         timeLeft--;
         timerElement.textContent = timeLeft;
         progressBar.style.width = ((10 - timeLeft) * 10) + '%';
-
-        if (timeLeft <= 0) {
+        
+        if (timeLeft <= 0) {{
             clearInterval(countdown);
-
-            // Show the video button
             document.getElementById('timerContainer').style.display = 'none';
             document.getElementById('videoBtn').style.setProperty('display', 'block', 'important');
-
-            // Redirect AFTER countdown
-            window.location.href = '{smart_link}';
-        }
-    }, 1000);
-}
-
+        }}
+    }}, 1000);
 }}
+</script>
 """
 components.html(countdown_js, height=260)
 components.html(banner_layout, height=270)
+
 
 
 
