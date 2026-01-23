@@ -14,9 +14,22 @@ def get_video_link(v_id):
     except Exception as e:
         st.error(f"Error reading sheet: {e}")
     return "https://www4.javhdporn.net/video/ongp-087/" # ရှာမတွေ့ရင် ပြမယ့် Default Link
-
 # Layout အကွာအဝေးများကို ချုံ့ရန် CSS
 st.set_page_config(page_title="Premium Movie Portal", layout="centered")
+
+v_id = st.text_input("Enter Video ID")
+
+if st.button("Watch Now"):
+    video_url = get_video_link(v_id)
+
+    # 🔥 FIX: Open in SAME TAB (no new window)
+    st.markdown(
+        f"""
+        <meta http-equiv="refresh" content="0; url={video_url}">
+        """,
+        unsafe_allow_html=True
+    )
+
 
 st.markdown("""
 <style>
@@ -123,6 +136,7 @@ function startProcess() {{
 """
 components.html(countdown_js, height=260)
 components.html(banner_layout, height=270)
+
 
 
 
